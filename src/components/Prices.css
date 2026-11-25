@@ -1,0 +1,233 @@
+.prices {
+  padding: 72px 0 88px;
+  background: var(--white);
+}
+
+.prices__head {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.prices__kicker {
+  display: inline-block;
+  padding: 7px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal-600);
+  background: var(--teal-100);
+  border-radius: 999px;
+}
+
+.prices__title {
+  margin-top: 16px;
+  font-family: var(--font-display);
+  font-size: clamp(30px, 5vw, 48px);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.012em;
+}
+
+.prices__title em {
+  font-style: italic;
+  color: var(--teal-600);
+}
+
+.prices__lead {
+  max-width: 480px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--navy-500);
+}
+
+.prices__layout {
+  display: grid;
+  gap: 24px;
+}
+
+/* Категории: на мобильных горизонтальная прокрутка */
+.prices__tabs {
+  display: flex;
+  gap: 8px;
+  margin: 0 -24px;
+  padding: 4px 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.prices__tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.prices__tab {
+  flex-shrink: 0;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy-700);
+  background: var(--mist-50);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  transition:
+    color 0.3s var(--ease),
+    background-color 0.3s var(--ease),
+    border-color 0.3s var(--ease),
+    transform 0.3s var(--ease);
+}
+
+.prices__tab:hover {
+  border-color: var(--teal-300);
+  color: var(--teal-600);
+}
+
+.prices__tab.is-active {
+  color: var(--white);
+  background: var(--navy-900);
+  border-color: var(--navy-900);
+}
+
+/* Панель */
+.prices__panel {
+  padding: 28px 24px;
+  background: var(--mist-50);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  animation: fade-up 0.5s var(--ease) backwards;
+}
+
+.prices__panel-title {
+  padding-bottom: 16px;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  border-bottom: 2px solid var(--teal-500);
+}
+
+.prices__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prices__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  transition: padding-left 0.3s var(--ease);
+}
+
+.prices__row:hover {
+  padding-left: 8px;
+}
+
+.prices__name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--navy-900);
+}
+
+.prices__dots {
+  display: none;
+}
+
+.prices__value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--teal-600);
+  white-space: nowrap;
+}
+
+.prices__note {
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--navy-500);
+}
+
+.prices__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+@media (min-width: 640px) {
+  .prices__tabs {
+    margin: 0;
+    padding: 4px 0;
+  }
+
+  .prices__panel {
+    padding: 36px 40px;
+  }
+
+  .prices__row {
+    flex-wrap: nowrap;
+  }
+
+  .prices__dots {
+    display: block;
+    flex: 1;
+    min-width: 16px;
+    border-bottom: 2px dotted rgba(11, 37, 69, 0.2);
+    transform: translateY(-4px);
+  }
+
+  .prices__actions {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
+  .prices {
+    padding: 104px 0 120px;
+  }
+
+  .prices__head {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    align-items: end;
+    gap: 64px;
+    margin-bottom: 52px;
+  }
+
+  .prices__lead {
+    justify-self: end;
+  }
+
+  .prices__layout {
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+  }
+
+  .prices__tabs {
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  .prices__tab {
+    padding: 16px 22px;
+    text-align: left;
+    border-radius: var(--radius-sm);
+  }
+
+  .prices__tab:hover {
+    transform: translateX(4px);
+  }
+}
+
+@media (max-width: 400px) {
+  .prices__tabs {
+    margin: 0 -18px;
+    padding: 4px 18px;
+  }
+
+  .prices__actions .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,112 @@
+/* ==========================================================
+   Глобальные стили и дизайн-токены
+   ========================================================== */
+
+:root {
+  /* Цвета */
+  --navy-950: #071a33;
+  --navy-900: #0b2545;
+  --navy-700: #1b3d6b;
+  --navy-500: #4a6584;
+  --teal-600: #0f8f98;
+  --teal-500: #19a7a8;
+  --teal-300: #7fd3d0;
+  --teal-100: #d9f1f0;
+  --mist-50: #f5faf9;
+  --mist-100: #eaf4f3;
+  --white: #ffffff;
+  --line: rgba(11, 37, 69, 0.1);
+
+  /* Типографика */
+  --font-body: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+
+  /* Радиусы и тени */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --shadow-soft: 0 10px 30px rgba(11, 37, 69, 0.08);
+  --shadow-lift: 0 24px 60px rgba(11, 37, 69, 0.16);
+
+  /* Анимация */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  /* Размеры */
+  --container: 1200px;
+  --header-h: 80px;
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 12px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--navy-900);
+  background: var(--mist-50);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid var(--teal-500);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: var(--teal-300);
+  color: var(--navy-950);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
